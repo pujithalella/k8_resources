@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+metadata:
+  name: mkb-app
+  namespace: default
+kind: Pod
+spec:
+  containers:
+    - name: mkb-admin
+      image:  tomcat
+      command: ["/bin/sh","-c","env"]
+      env:
+        - name: DATA_CENTER
+          valueFrom:
+            configMapKeyRef:
+              name: my-app
+              key: datacenter

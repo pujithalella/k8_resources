@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+metadata:
+  name: amb
+  namespace: default
+kind: Pod
+spec:
+  containers:
+    - name: amb-primary
+      image: tomcat
+    - name: amb-secondary
+      image: tomcat
